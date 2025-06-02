@@ -151,25 +151,36 @@
       margin: 0 auto 1em auto;
     }
 
-    @media (max-width: 768px) {
-      h1 {
-        font-size: 2.5em;
-      }
+   @media (max-width: 768px) {
+  h1 {
+    font-size: 2.5em;
+  }
 
-      h2 {
-        font-size: 1.2em;
-      }
+  h2 {
+    font-size: 1.2em;
+  }
 
-      /* Align content, menu and sections padding left/right same as .hero */
-      .hero,
-      #content,
-      .menu,
-      .section,
-      footer {
-        padding-left: 3em;
-        padding-right: 3em;
-      }
-    }
+  /* Make all these flush left by removing padding */
+  .hero,
+  #content,
+  .menu,
+  .section,
+  footer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  /* Optionally add a uniform left margin for all for some breathing room */
+  /* so all line up with each other */
+  .hero,
+  #content,
+  .menu,
+  .section,
+  footer {
+    margin-left: 1.5em;
+    margin-right: 1.5em;
+  }
+}
   </style>
 </head>
 <body>
