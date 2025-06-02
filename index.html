@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TMDigital</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background-color: #f8f7f1;
+      font-family: 'Courier New', Courier, monospace;
+      font-weight: 300;
+      color: #333;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body::after {
+      content: '';
+      display: block;
+      height: 10vh;
+    }
+
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      padding: 18vh 3em 0 3em;
+      box-sizing: border-box;
+    }
+
+    h1, h2 {
+      margin: 0;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-size: 3em;
+      font-weight: normal;
+      margin: 0 0 0.2em 0;
+      display: inline;
+      line-height: 1;
+    }
+    /* background only when .has-text */
+    #headerText.has-text {
+      background-color: #edcccc;
+      padding: 0 0.1em;
+      display: inline;
+    }
+
+    h2 {
+      font-size: 1.5em;
+      font-weight: normal;
+      margin-top: 0.2em;
+    }
+
+    h4 {
+      margin: 0.5em 0 0.5em 0;
+      display: inline;
+      line-height: 1;
+    }
+    #services h4.has-text,
+    #services h4.has-text {
+      background-color: #edcccc;
+      padding: 0 0.1em;
+    }
+
+    .cursor {
+      display: inline-block;
+      width: 0.1em;
+      background-color: #333;
+      animation: blink 1s step-start infinite;
+      margin-left: 2px;
+    }
+
+    @keyframes blink {
+      50% { opacity: 0; }
+    }
+
+    #content {
+      margin: 7vh 3em 1em 3em;
+      max-width: 700px;
+      white-space: normal;
+      opacity: 0;
+      transition: opacity 1.2s ease-in-out;
+    }
+
+    #email {
+      font-weight: bold;
+      margin-top: 2em;
+      margin-bottom: 3em;
+    }
+
+    #email a {
+      color: #333;
+      text-decoration: none;
+    }
+
+    #email a:hover {
+      text-decoration: underline;
+    }
+
+    .menu {
+      margin: 2em 3em;
+      display: none;
+      gap: 2em;
+      font-size: 1em;
+      cursor: pointer;
+      opacity: 0;
+      transition: opacity 1.2s ease-in-out;
+    }
+
+    .menu span {
+      text-decoration: underline;
+    }
+
+    .section {
+      margin: 2em 3em 6em 3em;
+      display: none;
+      max-width: 700px;
+    }
+
+    ul {
+      list-style-type: disc;
+      padding-left: 1.5em;
+    }
+
+    ul ul {
+      list-style-type: circle;
+      padding-left: 1.5em;
+    }
+
+    #connect a,
+    #kindred a,
+    #about a {
+      color: #000;
+      text-decoration: none;
+    }
+
+    #connect a:hover,
+    #kindred a:hover,
+    #about a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2.5em;
+      }
+
+      h2 {
+        font-size: 1.2em;
+      }
+
+      .hero,
+      #content,
+      .menu,
+      .section {
+        padding-left: 1.5em;
+        padding-right: 1.5em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <h1><span id="headerText"></span><span class="cursor" id="mainCursor"></span></h1>
+    <h2><span id="subheaderText"></span><span class="cursor" id="subCursor"></span></h2>
+  </div>
+
+  <div id="content">
+    <p>
+      Hello. I’ve been working in the music industry for 20 years, at record labels, DSPs and brick-and-mortar stores, developing a breadth of expertise across the digital music landscape. working with chart-bothering artists and campaigns in the US, UK and Europe, GRAMMY winners and much more.
+    </p>
+    <p>
+      If you need a plug and play solution for any of the services I can offer, or are just looking to talk about the latest changes in the music industry, let's talk!
+    </p>
+    <p id="email">
+      <a href="mailto:hello@tmdigital.music">hello@tmdigital.music</a>
+    </p>
+  </div>
+
+  <div class="menu" id="menu">
+    <span onclick="toggleSection('services')">Services</span>
+    <span onclick="toggleSection('about')">About</span>
+    <span onclick="toggleSection('connect')">Connect</span>
+    <span onclick="toggleSection('kindred')">Kindred Spirits</span>
+  </div>
+
+  <div id="services" class="section">
+    <ul>
+      <li>Individual & Team Mentorship</li><br>
+
+      <li>Artist & Campaign Strategy
+        <ul>
+          <li>Digital Channel Health Checks</li>
+          <li>DSP & Social Channel Exploitation</li>
+          <li>eCommerce & D2C Store Strategy</li>
+          <li>Email & CRM Planning & Execution</li>
+          <li>Creative Marketing</li>
+          <li>Rollout Planning</li>
+          <li>Release Teasing</li>
+          <li>Release Day Checklists</li>
+          <li>Audience Capture Planning</li>
+          <li>eCommerce/D2C Setup & Execution</li>
+          <li>Digital Advertising Planning & Execution</li>
+          <li>Performance Analysis</li>
+          <li>Campaign Recaps</li>
+        </ul>
+      </li><br>
+
+      <li>Data Analysis
+        <ul>
+          <li>eCommerce / D2C Sales Data</li>
+          <li>DSP Performance - Release & Catalogue</li>
+          <li>Social Channel / Content Engagement</li>
+          <li>Audience & Segmentation</li>
+          <li>Revenue</li>
+        </ul>
+      </li><br>
+
+      <li>Catalogue Distribution & Exploitation
+        <ul>
+          <li>Platform Distribution</li>
+          <li>Rights Management</li>
+          <li>Conflict Negotiation</li>
+          <li>Deal Analysis & Breakdowns</li>
+        </ul>
+      </li><br>
+
+      <li>Team Setup & Management
+        <ul>
+          <li>Team Assembly & Communication Flow</li>
+          <li>Tool/Stack Recommendations</li>
+          <li>Identifying Roadblocks & Solutions</li>
+        </ul>
+      </li>
+    </ul>
+<br>
+    <h4 class="has-text">I'm not the right person for -</h4>
+    <ul>
+      <li>Social Media Channel, Calendar Management</li><br>
+      <li>Content Creation</li><br>
+      <li>Web Design</li><br>
+      <li>Artist Management</li><br>
+      <li>A&amp;R</li>
+    </ul>
+  </div>
+
+  <div id="about" class="section">
+    <p>I’m Tom - a London born, Yorkshire raised, currently Los Angeles based music executive.</p>
+    <p>I’ve <a href="https://open.spotify.com/playlist/5WRiW2LJlebZP4P9x5jJWW?si=72a2782421304425&pt=514cc174b95802410123bf45d02eb93c">worked</a> with US, UK and European chart-bothering artists and campaigns, GRAMMY winners and festival headliners, as well as boundary-pushing indie artists and labels across multiple genres. I’ve also been quoted in the New Statesman, Mixmag, MusicAlly, MusicTech and more on music industry matters.</p>
+    <p>I have a fiercly independent mindset, which continues to form the core of my approach to work and people. Through this, I’ve earned a strong reputation as a deeply knowledgeable, personable, clear and direct digital thought leader and strategist over the last two decades.</p>
+    <p>I prefer to avoid jumping on flavour-of-the-month trends, preferring to take a considered, data-informed, results driven approach to artist and release marketing, audience building and more.</p>
+    <p>I’m dry, sarcastic, self deprecating and a joy to work with. If you need a hand with anything I can do, are looking to hire someone on a contract/freelance basis, or are just looking to chat about the latest changes in the music industry, let's talk!</p>
+  </div>
+
+  <div id="connect" class="section">
+    <ul>
+      <li><a href="https://www.linkedin.com/in/tom-macdonald-b656b111/" target="_blank">LinkedIn</a></li><br>
+      <li><a href="https://substack.com/@tommmacdonald/posts" target="_blank">Substack</a></li><br>
+      <li><a href="https://bsky.app/profile/tmdigital.music" target="_blank">BlueSky</a></li><br>
+      <li><a href="https://bandcamp.com/tommmacdonald" target="_blank">Bandcamp</a></li><br>
+      <li><a href="https://www.last.fm/user/tommmacdonald" target="_blank">Last.fm</a></li><br>
+    </ul>
+  </div>
+
+  <div id="tbc" class="section">
+    <p>To Be Confirmed</p>
+  </div>
+
+  <div id="kindred" class="section">
+    <ul>
+      <li><a href="https://www.rarelyunable.com/" target="_blank">Rarely Unable</a></li><br>
+      <li><a href="https://chaostheorymusic.co.uk/" target="_blank">Chaos Theory Music</a></li><br>
+      <li><a href="https://www.firstterracerecords.com/" target="_blank">First Terrace Records</a></li><br>
+    </ul>
+  </div>
+
+  <script>
+    function typeText(elementId, text, speed, callback) {
+      let i = 0;
+      const el = document.getElementById(elementId);
+      function type() {
+        if (i <= text.length) {
+          el.textContent = text.substring(0, i);
+          // add or remove class depending on text presence
+          if (el.textContent.length > 0) {
+            el.classList.add('has-text');
+          } else {
+            el.classList.remove('has-text');
+          }
+          i++;
+          setTimeout(type, speed);
+        } else if (callback) {
+          callback();
+        }
+      }
+      type();
+    }
+
+    function toggleSection(id) {
+      const sections = document.querySelectorAll('.section');
+      sections.forEach(section => {
+        if (section.id === id) {
+          section.style.display = section.style.display === 'block' ? 'none' : 'block';
+        } else {
+          section.style.display = 'none';
+        }
+      });
+    }
+
+    window.onload = () => {
+      setTimeout(() => {
+        typeText('headerText', 'TMDigital', 120, () => {
+          typeText('subheaderText', 'Bespoke Consultancy for the Music Industry', 40, () => {
+            const content = document.getElementById('content');
+            const menu = document.getElementById('menu');
+            content.style.opacity = 1;
+            menu.style.display = 'flex';
+            setTimeout(() => {
+              menu.style.opacity = 1;
+            }, 100);
+          });
+        });
+      }, 1000);
+    };
+  </script>
+</body>
+</html>
