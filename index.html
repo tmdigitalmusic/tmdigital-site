@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -125,14 +126,26 @@
 
     #connect a,
     #kindred a,
-    #about a {
+    #about a,
+    #content a {
       color: #000;
       text-decoration: none;
     }
 
+    a.email-link {
+  color: #000;           /* black color */
+  font-weight: bold;     /* bold only this link */
+  text-decoration: none; /* no underline by default */
+}
+
+a.email-link:hover {
+  text-decoration: underline; /* underline on hover */
+}
+
     #connect a:hover,
     #kindred a:hover,
-    #about a:hover {
+    #about a:hover,
+    #content a:hover {
       text-decoration: underline;
     }
 
@@ -198,6 +211,7 @@
     <p>
       If you need a plug and play solution for any of the services I can offer, or are just looking to talk about the latest changes in the music industry, let's talk!
     </p>
+    <p><a href="mailto:hello@tmdigital.music" class="email-link">hello@tmdigital.music</a></p>
   </div>
 
   <div class="menu" id="menu">
