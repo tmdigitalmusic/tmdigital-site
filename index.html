@@ -152,23 +152,30 @@
     }
 
     @media (max-width: 768px) {
-      h1 {
-        font-size: 2.5em;
-      }
+  h1 {
+    font-size: 2.5em;
+  }
 
-      h2 {
-        font-size: 1.2em;
-      }
+  h2 {
+    font-size: 1.2em;
+  }
 
-      .hero,
-      #content,
-      .menu,
-      .section,
-      footer {
-        padding-left: 1.5em;
-        padding-right: 1.5em;
-      }
-    }
+  .hero,
+  #content,
+  .menu,
+  .section,
+  footer {
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .menu {
+    flex-direction: column;
+    gap: 1em;
+  }
+}
   </style>
 </head>
 <body>
