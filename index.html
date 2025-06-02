@@ -16,41 +16,59 @@
       scroll-behavior: smooth;
     }
 
+    body {
+      box-sizing: border-box;
+    }
+
     .hero {
       display: flex;
       flex-direction: column;
       align-items: flex-start;
       justify-content: flex-start;
-      padding: 18vh 1.5em 0 1.5em;
+      padding: 18vh 3em 0 3em;
+      box-sizing: border-box;
     }
 
     h1, h2 {
       margin: 0;
-      white-space: nowrap;
-      overflow: hidden;
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+      word-break: break-word;
     }
 
     h1 {
       font-size: 3em;
       font-weight: normal;
+      margin-bottom: 0.2em;
+      display: inline;
       line-height: 1;
+      white-space: nowrap;
+      overflow: hidden;
     }
 
     #headerText.has-text {
       background-color: #edcccc;
       padding: 0 0.1em;
-    }
-
-    /* Removed background for subheader */
-    #subheaderText.has-text {
-      background-color: transparent;
-      padding: 0;
+      display: inline;
     }
 
     h2 {
       font-size: 1.5em;
       font-weight: normal;
       margin-top: 0.2em;
+      white-space: normal;
+      word-break: break-word;
+    }
+
+    h4 {
+      margin: 0.5em 0;
+      display: inline;
+      line-height: 1;
+    }
+
+    #services h4.has-text {
+      background-color: #edcccc;
+      padding: 0 0.1em;
     }
 
     .cursor {
@@ -66,29 +84,15 @@
     }
 
     #content {
-      margin: 7vh 1.5em 1em 1.5em;
+      margin: 7vh 3em 1em 3em;
       max-width: 700px;
+      white-space: normal;
       opacity: 0;
       transition: opacity 1.2s ease-in-out;
     }
 
-    #email {
-      font-weight: bold;
-      margin-top: 2em;
-      margin-bottom: 3em;
-    }
-
-    #email a {
-      color: #333;
-      text-decoration: none;
-    }
-
-    #email a:hover {
-      text-decoration: underline;
-    }
-
     .menu {
-      margin: 2em 1.5em;
+      margin: 2em 3em;
       display: none;
       gap: 2em;
       font-size: 1em;
@@ -102,7 +106,7 @@
     }
 
     .section {
-      margin: 2em 1.5em 6em 1.5em;
+      margin: 2em 3em 6em 3em;
       display: none;
       max-width: 700px;
     }
@@ -114,6 +118,7 @@
 
     ul ul {
       list-style-type: circle;
+      padding-left: 1.5em;
     }
 
     #connect a,
@@ -129,9 +134,21 @@
       text-decoration: underline;
     }
 
-    h4.has-text {
-      background-color: #edcccc;
-      padding: 0 0.1em;
+    footer {
+      opacity: 0;
+      transition: opacity 1.2s ease-in-out;
+      margin-top: 6vh;
+      padding: 2em 3em;
+      font-size: 0.8em;
+      color: #666;
+      max-width: 700px;
+    }
+
+    .footer-line {
+      width: fit-content;
+      border: none;
+      border-top: 1px solid #ccc;
+      margin: 0 auto 1em auto;
     }
 
     @media (max-width: 768px) {
@@ -141,6 +158,15 @@
 
       h2 {
         font-size: 1.2em;
+      }
+
+      .hero,
+      #content,
+      .menu,
+      .section,
+      footer {
+        padding-left: 1.5em;
+        padding-right: 1.5em;
       }
     }
   </style>
@@ -158,9 +184,6 @@
     <p>
       If you need a plug and play solution for any of the services I can offer, or are just looking to talk about the latest changes in the music industry, let's talk!
     </p>
-    <p id="email">
-      <a href="mailto:hello@tmdigital.music">hello@tmdigital.music</a>
-    </p>
   </div>
 
   <div class="menu" id="menu">
@@ -173,7 +196,6 @@
   <div id="services" class="section">
     <ul>
       <li>Individual & Team Mentorship</li><br>
-
       <li>Artist & Campaign Strategy
         <ul>
           <li>Digital Channel Health Checks</li>
@@ -191,7 +213,6 @@
           <li>Campaign Recaps</li>
         </ul>
       </li><br>
-
       <li>Data Analysis
         <ul>
           <li>eCommerce / D2C Sales Data</li>
@@ -201,7 +222,6 @@
           <li>Revenue</li>
         </ul>
       </li><br>
-
       <li>Catalogue Distribution & Exploitation
         <ul>
           <li>Platform Distribution</li>
@@ -210,7 +230,6 @@
           <li>Deal Analysis & Breakdowns</li>
         </ul>
       </li><br>
-
       <li>Team Setup & Management
         <ul>
           <li>Team Assembly & Communication Flow</li>
@@ -248,10 +267,6 @@
     </ul>
   </div>
 
-  <div id="tbc" class="section">
-    <p>To Be Confirmed</p>
-  </div>
-
   <div id="kindred" class="section">
     <ul>
       <li><a href="https://www.rarelyunable.com/" target="_blank">Rarely Unable</a></li><br>
@@ -260,6 +275,11 @@
     </ul>
   </div>
 
+  <footer id="footer">
+    <hr class="footer-line" />
+    <p>&copy; 2025 TMDigital. All rights reserved.</p>
+  </footer>
+
   <script>
     function typeText(elementId, text, speed, callback) {
       let i = 0;
@@ -267,7 +287,11 @@
       function type() {
         if (i <= text.length) {
           el.textContent = text.substring(0, i);
-          el.classList.toggle('has-text', i > 0);
+          if (el.textContent.length > 0) {
+            el.classList.add('has-text');
+          } else {
+            el.classList.remove('has-text');
+          }
           i++;
           setTimeout(type, speed);
         } else if (callback) {
@@ -285,17 +309,33 @@
     }
 
     window.onload = () => {
+      const headerText = 'TMDigital';
+      const subheaderText = 'Bespoke Consultancy for the Music Industry';
+      const headerEl = document.getElementById('headerText');
+      const subheaderEl = document.getElementById('subheaderText');
+      const contentEl = document.getElementById('content');
+      const menuEl = document.getElementById('menu');
+
+      let subIndex = 0;
+
+      function typeSubheader() {
+        if (subIndex < subheaderText.length) {
+          subheaderEl.textContent += subheaderText.charAt(subIndex);
+          subIndex++;
+          setTimeout(typeSubheader, 40);
+        } else {
+          contentEl.style.opacity = 1;
+          menuEl.style.display = 'flex';
+          document.getElementById('footer').style.opacity = 1;
+          setTimeout(() => {
+            menuEl.style.opacity = 1;
+          }, 50);
+        }
+      }
+
       setTimeout(() => {
-        typeText('headerText', 'TMDigital', 120, () => {
-          typeText('subheaderText', 'Bespoke Consultancy for the Music Industry', 40, () => {
-            const content = document.getElementById('content');
-            const menu = document.getElementById('menu');
-            content.style.opacity = 1;
-            menu.style.display = 'flex';
-            setTimeout(() => {
-              menu.style.opacity = 1;
-            }, 100);
-          });
+        typeText('headerText', headerText, 120, () => {
+          typeSubheader();
         });
       }, 1000);
     };
