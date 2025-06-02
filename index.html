@@ -16,19 +16,12 @@
       scroll-behavior: smooth;
     }
 
-    body::after {
-      content: '';
-      display: block;
-      height: 10vh;
-    }
-
     .hero {
       display: flex;
       flex-direction: column;
       align-items: flex-start;
       justify-content: flex-start;
       padding: 18vh 1.5em 0 1.5em;
-      box-sizing: border-box;
     }
 
     h1, h2 {
@@ -40,15 +33,12 @@
     h1 {
       font-size: 3em;
       font-weight: normal;
-      margin: 0 0 0.2em 0;
-      display: inline;
       line-height: 1;
     }
 
     #headerText.has-text {
       background-color: #edcccc;
-      padding: 0 0.05em;
-      display: inline;
+      padding: 0 0.1em;
     }
 
     h2 {
@@ -57,15 +47,9 @@
       margin-top: 0.2em;
     }
 
-    h4 {
-      margin: 0.5em 0;
-      display: inline;
-      line-height: 1;
-    }
-
-    #services h4.has-text {
+    #subheaderText.has-text {
       background-color: #edcccc;
-      padding: 0 0.05em;
+      padding: 0 0.1em;
     }
 
     .cursor {
@@ -83,7 +67,6 @@
     #content {
       margin: 7vh 1.5em 1em 1.5em;
       max-width: 700px;
-      white-space: normal;
       opacity: 0;
       transition: opacity 1.2s ease-in-out;
     }
@@ -130,7 +113,6 @@
 
     ul ul {
       list-style-type: circle;
-      padding-left: 1.5em;
     }
 
     #connect a,
@@ -146,6 +128,11 @@
       text-decoration: underline;
     }
 
+    h4.has-text {
+      background-color: #edcccc;
+      padding: 0 0.1em;
+    }
+
     @media (max-width: 768px) {
       h1 {
         font-size: 2.5em;
@@ -153,14 +140,6 @@
 
       h2 {
         font-size: 1.2em;
-      }
-
-      .hero,
-      #content,
-      .menu,
-      .section {
-        padding-left: 1.5em;
-        padding-right: 1.5em;
       }
     }
   </style>
@@ -187,19 +166,86 @@
     <span onclick="toggleSection('services')">Services</span>
     <span onclick="toggleSection('about')">About</span>
     <span onclick="toggleSection('connect')">Connect</span>
+    <span onclick="toggleSection('tbc')">TBC</span>
     <span onclick="toggleSection('kindred')">Kindred Spirits</span>
   </div>
 
   <div id="services" class="section">
-    <!-- Services content remains the same as in the prior message -->
+    <ul>
+      <li>Individual & Team Mentorship</li><br>
+
+      <li>Artist & Campaign Strategy
+        <ul>
+          <li>Digital Channel Health Checks</li>
+          <li>DSP & Social Channel Exploitation</li>
+          <li>eCommerce & D2C Store Strategy</li>
+          <li>Email & CRM Planning & Execution</li>
+          <li>Creative Marketing</li>
+          <li>Rollout Planning</li>
+          <li>Release Teasing</li>
+          <li>Release Day Checklists</li>
+          <li>Audience Capture Planning</li>
+          <li>eCommerce/D2C Setup & Execution</li>
+          <li>Digital Advertising Planning & Execution</li>
+          <li>Performance Analysis</li>
+          <li>Campaign Recaps</li>
+        </ul>
+      </li><br>
+
+      <li>Data Analysis
+        <ul>
+          <li>eCommerce / D2C Sales Data</li>
+          <li>DSP Performance - Release & Catalogue</li>
+          <li>Social Channel / Content Engagement</li>
+          <li>Audience & Segmentation</li>
+          <li>Revenue</li>
+        </ul>
+      </li><br>
+
+      <li>Catalogue Distribution & Exploitation
+        <ul>
+          <li>Platform Distribution</li>
+          <li>Rights Management</li>
+          <li>Conflict Negotiation</li>
+          <li>Deal Analysis & Breakdowns</li>
+        </ul>
+      </li><br>
+
+      <li>Team Setup & Management
+        <ul>
+          <li>Team Assembly & Communication Flow</li>
+          <li>Tool/Stack Recommendations</li>
+          <li>Identifying Roadblocks & Solutions</li>
+        </ul>
+      </li>
+    </ul>
+    <br>
+    <h4 class="has-text">I'm not the right person for -</h4>
+    <ul>
+      <li>Social Media Channel, Calendar Management</li><br>
+      <li>Content Creation</li><br>
+      <li>Web Design</li><br>
+      <li>Artist Management</li><br>
+      <li>A&amp;R</li>
+    </ul>
   </div>
 
   <div id="about" class="section">
-    <!-- About section content -->
+    <p>I’m Tom - a London born, Yorkshire raised, currently Los Angeles based music executive.</p>
+    <p>I’ve <a href="https://open.spotify.com/playlist/5WRiW2LJlebZP4P9x5jJWW?si=72a2782421304425&pt=514cc174b95802410123bf45d02eb93c">worked</a> with US, UK and European chart-bothering artists and campaigns, GRAMMY winners and festival headliners, as well as boundary-pushing indie artists and labels across multiple genres. I’ve also been quoted in the New Statesman, Mixmag, MusicAlly, MusicTech and more on music industry matters.</p>
+    <p>I have a fiercely independent mindset, which continues to form the core of my approach to work and people. Through this, I’ve earned a strong reputation as a deeply knowledgeable, personable, clear and direct digital thought leader and strategist over the last two decades.</p>
+    <p>I prefer to avoid jumping on flavour-of-the-month trends, preferring to take a considered, data-informed, results driven approach to artist and release marketing, audience building and more.</p>
+    <p>I’m dry, sarcastic, self deprecating and a joy to work with. If you need a hand with anything I can do, are looking to hire someone on a contract/freelance basis, or are just looking to chat about the latest changes in the music industry, let's talk!</p>
   </div>
 
   <div id="connect" class="section">
-    <!-- Connect links -->
+    <ul>
+      <li><a href="https://www.linkedin.com/in/tom-macdonald-b656b111/" target="_blank">LinkedIn</a></li><br>
+      <li><a href="https://substack.com/@tommmacdonald/posts" target="_blank">Substack</a></li><br>
+      <li><a href="https://bsky.app/profile/tmdigital.music" target="_blank">BlueSky</a></li><br>
+      <li><a href="https://bandcamp.com/tommmacdonald" target="_blank">Bandcamp</a></li><br>
+      <li><a href="https://www.last.fm/user/tommmacdonald" target="_blank">Last.fm</a></li><br>
+    </ul>
   </div>
 
   <div id="tbc" class="section">
@@ -221,11 +267,7 @@
       function type() {
         if (i <= text.length) {
           el.textContent = text.substring(0, i);
-          if (el.textContent.length > 0) {
-            el.classList.add('has-text');
-          } else {
-            el.classList.remove('has-text');
-          }
+          el.classList.toggle('has-text', i > 0);
           i++;
           setTimeout(type, speed);
         } else if (callback) {
@@ -238,11 +280,7 @@
     function toggleSection(id) {
       const sections = document.querySelectorAll('.section');
       sections.forEach(section => {
-        if (section.id === id) {
-          section.style.display = section.style.display === 'block' ? 'none' : 'block';
-        } else {
-          section.style.display = 'none';
-        }
+        section.style.display = (section.id === id && section.style.display !== 'block') ? 'block' : 'none';
       });
     }
 
