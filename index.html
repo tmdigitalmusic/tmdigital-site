@@ -151,7 +151,7 @@
       margin: 0 auto 1em auto;
     }
 
-   @media (max-width: 768px) {
+ @media (max-width: 768px) {
   h1 {
     font-size: 2.5em;
   }
@@ -160,25 +160,22 @@
     font-size: 1.2em;
   }
 
-  /* Make all these flush left by removing padding */
   .hero,
   #content,
   .menu,
   .section,
   footer {
-    padding-left: 0;
-    padding-right: 0;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
   }
 
-  /* Optionally add a uniform left margin for all for some breathing room */
-  /* so all line up with each other */
-  .hero,
-  #content,
-  .menu,
-  .section,
-  footer {
-    margin-left: 1.5em;
-    margin-right: 1.5em;
+  /* Add consistent vertical spacing */
+  .hero {
+    margin-bottom: 2em; /* space below subheader */
+  }
+
+  #content {
+    margin-bottom: 2em; /* space below body text */
   }
 }
   </style>
