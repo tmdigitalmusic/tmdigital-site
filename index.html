@@ -14,9 +14,6 @@
       font-weight: 300;
       color: #333;
       scroll-behavior: smooth;
-    }
-
-    body {
       box-sizing: border-box;
     }
 
@@ -26,49 +23,29 @@
       align-items: flex-start;
       justify-content: flex-start;
       padding: 18vh 3em 0 3em;
-      box-sizing: border-box;
     }
 
     h1, h2 {
       margin: 0;
       overflow-wrap: break-word;
-      word-wrap: break-word;
       word-break: break-word;
     }
 
     h1 {
       font-size: 3em;
       font-weight: normal;
-      margin-bottom: 0.2em;
-      display: inline;
       line-height: 1;
-      white-space: nowrap;
-      overflow: hidden;
     }
 
     #headerText.has-text {
       background-color: #edcccc;
       padding: 0 0.1em;
-      display: inline;
     }
 
     h2 {
       font-size: 1.5em;
       font-weight: normal;
-      margin-top: 0.2em;
-      white-space: normal;
-      word-break: break-word;
-    }
-
-    h4 {
-      margin: 0.5em 0;
-      display: inline;
-      line-height: 1;
-    }
-
-    #services h4.has-text {
-      background-color: #edcccc;
-      padding: 0 0.1em;
+      margin-top: 0.3em;
     }
 
     .cursor {
@@ -84,7 +61,7 @@
     }
 
     #content {
-      margin: 7vh 3em 1em 3em;
+      margin: 7vh 3em 2em 3em;
       max-width: 700px;
       white-space: normal;
       opacity: 0;
@@ -134,48 +111,43 @@
       text-decoration: underline;
     }
 
-    footer {
+    .footer {
+      text-align: left;
+      margin: 2em 3em 4em 3em;
       opacity: 0;
       transition: opacity 1.2s ease-in-out;
-      margin-top: 6vh;
-      padding: 2em 3em;
-      font-size: 0.8em;
-      color: #666;
-      max-width: 700px;
     }
 
-    .footer-line {
-      width: fit-content;
+    .footer hr {
       border: none;
       border-top: 1px solid #ccc;
-      margin: 0 auto 1em auto;
+      width: fit-content;
+      margin: 1em 0;
     }
 
     @media (max-width: 768px) {
-  h1 {
-    font-size: 2.5em;
-  }
+      h1 {
+        font-size: 2.3em;
+      }
 
-  h2 {
-    font-size: 1.2em;
-  }
+      h2 {
+        font-size: 1.2em;
+      }
 
-  .hero,
-  #content,
-  .menu,
-  .section,
-  footer {
-    padding-left: 1.5em;
-    padding-right: 1.5em;
-    margin-left: 0;
-    margin-right: 0;
-  }
+      .hero,
+      #content,
+      .menu,
+      .section,
+      .footer {
+        padding-left: 1.5em;
+        padding-right: 1.5em;
+      }
 
-  .menu {
-    flex-direction: column;
-    gap: 1em;
-  }
-}
+      .menu {
+        flex-direction: column;
+        gap: 1em;
+      }
+    }
   </style>
 </head>
 <body>
@@ -245,7 +217,6 @@
         </ul>
       </li>
     </ul>
-    <br>
     <h4 class="has-text">I'm not the right person for -</h4>
     <ul>
       <li>Social Media Channel, Calendar Management</li><br>
@@ -260,8 +231,8 @@
     <p>I’m Tom - a London born, Yorkshire raised, currently Los Angeles based music executive.</p>
     <p>I’ve <a href="https://open.spotify.com/playlist/5WRiW2LJlebZP4P9x5jJWW?si=72a2782421304425&pt=514cc174b95802410123bf45d02eb93c">worked</a> with US, UK and European chart-bothering artists and campaigns, GRAMMY winners and festival headliners, as well as boundary-pushing indie artists and labels across multiple genres. I’ve also been quoted in the New Statesman, Mixmag, MusicAlly, MusicTech and more on music industry matters.</p>
     <p>I have a fiercely independent mindset, which continues to form the core of my approach to work and people. Through this, I’ve earned a strong reputation as a deeply knowledgeable, personable, clear and direct digital thought leader and strategist over the last two decades.</p>
-    <p>I prefer to avoid jumping on flavour-of-the-month trends, preferring to take a considered, data-informed, results driven approach to artist and release marketing, audience building and more.</p>
-    <p>I’m dry, sarcastic, self deprecating and a joy to work with. If you need a hand with anything I can do, are looking to hire someone on a contract/freelance basis, or are just looking to chat about the latest changes in the music industry, let's talk!</p>
+    <p>I prefer to avoid jumping on flavour-of-the-month trends, preferring to take a considered, data-informed, results-driven approach to artist and release marketing, audience building and more.</p>
+    <p>I’m dry, sarcastic, self-deprecating and a joy to work with. If you need a hand with anything I can do, are looking to hire someone on a contract/freelance basis, or are just looking to chat about the latest changes in the music industry, let's talk!</p>
   </div>
 
   <div id="connect" class="section">
@@ -282,10 +253,10 @@
     </ul>
   </div>
 
-  <footer id="footer">
-    <hr class="footer-line" />
-    <p>&copy; 2025 TMDigital. All rights reserved.</p>
-  </footer>
+  <div class="footer" id="footer">
+    <hr />
+    <p>© TMDigital</p>
+  </div>
 
   <script>
     function typeText(elementId, text, speed, callback) {
@@ -309,40 +280,37 @@
     }
 
     function toggleSection(id) {
+      const isMobile = window.innerWidth <= 768;
       const sections = document.querySelectorAll('.section');
-      sections.forEach(section => {
-        section.style.display = (section.id === id && section.style.display !== 'block') ? 'block' : 'none';
-      });
+      const clickedSection = document.getElementById(id);
+
+      if (isMobile) {
+        const isVisible = clickedSection.style.display === 'block';
+        sections.forEach(s => s.style.display = 'none');
+        document.getElementById('menu').style.display = isVisible ? 'flex' : 'none';
+        clickedSection.style.display = isVisible ? 'none' : 'block';
+      } else {
+        sections.forEach(section => {
+          if (section.id === id) {
+            section.style.display = section.style.display === 'block' ? 'none' : 'block';
+          } else {
+            section.style.display = 'none';
+          }
+        });
+      }
     }
 
     window.onload = () => {
-      const headerText = 'TMDigital';
-      const subheaderText = 'Bespoke Consultancy for the Music Industry';
-      const headerEl = document.getElementById('headerText');
-      const subheaderEl = document.getElementById('subheaderText');
-      const contentEl = document.getElementById('content');
-      const menuEl = document.getElementById('menu');
-
-      let subIndex = 0;
-
-      function typeSubheader() {
-        if (subIndex < subheaderText.length) {
-          subheaderEl.textContent += subheaderText.charAt(subIndex);
-          subIndex++;
-          setTimeout(typeSubheader, 40);
-        } else {
-          contentEl.style.opacity = 1;
-          menuEl.style.display = 'flex';
-          document.getElementById('footer').style.opacity = 1;
-          setTimeout(() => {
-            menuEl.style.opacity = 1;
-          }, 50);
-        }
-      }
-
       setTimeout(() => {
-        typeText('headerText', headerText, 120, () => {
-          typeSubheader();
+        typeText('headerText', 'TMDigital', 120, () => {
+          typeText('subheaderText', 'Bespoke Consultancy for the Music Industry', 40, () => {
+            document.getElementById('content').style.opacity = 1;
+            document.getElementById('menu').style.display = 'flex';
+            setTimeout(() => {
+              document.getElementById('menu').style.opacity = 1;
+              document.getElementById('footer').style.opacity = 1;
+            }, 100);
+          });
         });
       }, 1000);
     };
