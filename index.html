@@ -51,14 +51,8 @@
       margin-bottom: 0.2em;
       display: inline;
       line-height: 1;
-      white-space: nowrap;
-      overflow: hidden;
-    }
-
-    #headerText.has-text {
       background-color: #edcccc;
       padding: 0 0.1em;
-      display: inline;
     }
 
     h2 {
@@ -73,23 +67,6 @@
       margin: 0.5em 0;
       display: inline;
       line-height: 1;
-    }
-
-    #services h4.has-text {
-      background-color: #edcccc;
-      padding: 0 0.1em;
-    }
-
-    .cursor {
-      display: inline-block;
-      width: 0.1em;
-      background-color: #333;
-      animation: blink 1s step-start infinite;
-      margin-left: 2px;
-    }
-
-    @keyframes blink {
-      50% { opacity: 0; }
     }
 
     #content {
@@ -120,14 +97,57 @@
       max-width: 700px;
     }
 
-    ul {
-      list-style-type: disc;
-      padding-left: 1.5em;
+    #services ul {
+      list-style: none;
+      padding-left: 0;
     }
 
-    ul ul {
-      list-style-type: circle;
+    #services > ul > li {
+      margin-bottom: 1.2em;
+    }
+
+    #services > ul > li > span {
+      background-color: #edcccc;
+      padding: 0 0.1em;
+      display: inline;
+    }
+
+    #services > ul > li > ul {
+      list-style: none;
       padding-left: 1.5em;
+      margin-top: 0.3em;
+    }
+
+    #services > ul > li > ul > li {
+      position: relative;
+      padding-left: 1em;
+      margin-bottom: 0.1em;
+    }
+
+    #services > ul > li > ul > li::before {
+      content: '–';
+      position: absolute;
+      left: 0;
+      color: #888;
+    }
+
+    #services .not-right-list {
+      list-style: none;
+      padding-left: 1.5em;
+      margin-top: 0.3em;
+    }
+
+    #services .not-right-list > li {
+      position: relative;
+      padding-left: 1em;
+      margin-bottom: 0.5em;
+    }
+
+    #services .not-right-list > li::before {
+      content: '–';
+      position: absolute;
+      left: 0;
+      color: #888;
     }
 
     #connect a,
@@ -139,14 +159,14 @@
     }
 
     a.email-link {
-  color: #000;           /* black color */
-  font-weight: bold;     /* bold only this link */
-  text-decoration: none; /* no underline by default */
-}
+      color: #000;
+      font-weight: bold;
+      text-decoration: none;
+    }
 
-a.email-link:hover {
-  text-decoration: underline; /* underline on hover */
-}
+    a.email-link:hover {
+      text-decoration: underline;
+    }
 
     #connect a:hover,
     #kindred a:hover,
@@ -181,7 +201,6 @@ a.email-link:hover {
     font-size: 1.2em;
   }
 
-  /* Make all these flush left by removing padding */
   .hero,
   #content,
   .menu,
@@ -191,8 +210,6 @@ a.email-link:hover {
     padding-right: 0;
   }
 
-  /* Optionally add a uniform left margin for all for some breathing room */
-  /* so all line up with each other */
   .hero,
   #content,
   .menu,
@@ -206,12 +223,12 @@ a.email-link:hover {
 </head>
 <body>
   <div class="hero">
-    <h1><span id="headerText"></span><span class="cursor" id="mainCursor"></span></h1>
-    <h2><span id="subheaderText"></span><span class="cursor" id="subCursor"></span></h2>
+    <h1>TMDigital</h1>
+    <h2>Bespoke Consulting for the Music Industry</h2>
   </div>
 
   <div id="content">
-   <p>Hello, I’m Tom - a London born, Yorkshire raised, Los Angeles based music and marketing executive. I’ve been working in the music industry for 20 years, at record labels, DSPs and brick-and-mortar stores, developing a breadth of expertise across the digital music and modern marketing landscapes. I've worked with chart-bothering, record-breaking artists and campaigns in the US, UK and Europe, GRAMMY winners, and some of the most critically acclaimed, boundary-pushing independent artists and labels of our generation.</p>
+   <p>Hello, I'm Tom - a London born, Yorkshire raised, Los Angeles based music and marketing executive. I've been working in the music industry for 20 years, at record labels, DSPs and brick-and-mortar stores, developing a breadth of expertise across the digital music and modern marketing landscapes. I've worked with chart-bothering, record-breaking artists and campaigns in the US, UK and Europe, GRAMMY winners, and some of the most critically acclaimed, boundary-pushing independent artists and labels of our generation.</p>
 <p>If you need a plug and play solution for any of the services I can offer below, or are just looking to chat about the latest changes in the music industry, let's talk!</p>
     <p><a href="mailto:hello@tmdigital.music" class="email-link">hello@tmdigital.music</a></p>
   </div>
@@ -225,14 +242,15 @@ a.email-link:hover {
 
   <div id="services" class="section">
     <ul>
-      <li>Artist & Campaign Strategy
+      <li>
+        <span>Artist &amp; Campaign Strategy</span>
         <ul>
           <li>Digital Channel Health Checks</li>
-          <li>eCommerce & D2C Store Setup & Strategy</li>
-          <li>Email & CRM Planning & Execution</li>
-          <li>Digital Advertising Planning & Execution</li>
+          <li>eCommerce &amp; D2C Store Setup &amp; Strategy</li>
+          <li>Email &amp; CRM Planning &amp; Execution</li>
+          <li>Digital Advertising Planning &amp; Execution</li>
           <li>Marketing Strategy</li>
-          <li>DSP & Social Channel Exploitation</li>
+          <li>DSP &amp; Social Channel Exploitation</li>
           <li>Rollout Planning</li>
           <li>Release Teasing</li>
           <li>Release Day Checklists</li>
@@ -240,49 +258,52 @@ a.email-link:hover {
           <li>Performance Analysis</li>
           <li>Campaign Recaps</li>
         </ul>
-      </li><br>
-      <li>Data Analysis
+      </li>
+      <li>
+        <span>Data Analysis</span>
         <ul>
           <li>eCommerce / D2C Sales Data</li>
-          <li>DSP Performance - Release & Catalogue</li>
-          <li>Social Channel & Content Engagement</li>
-          <li>Audience & Segmentation</li>
+          <li>DSP Performance - Release &amp; Catalogue</li>
+          <li>Social Channel &amp; Content Engagement</li>
+          <li>Audience &amp; Segmentation</li>
           <li>Revenue Analysis</li>
         </ul>
-      </li><br>
-      <li>Catalogue Distribution & Exploitation
+      </li>
+      <li>
+        <span>Catalogue Distribution &amp; Exploitation</span>
         <ul>
           <li>Platform Distribution</li>
           <li>Rights Management</li>
           <li>Conflict Negotiation</li>
-          <li>Deal Analysis & Breakdowns</li>
+          <li>Deal Analysis &amp; Breakdowns</li>
         </ul>
-      </li><br>
-      <li>Team Setup & Management
+      </li>
+      <li>
+        <span>Team Setup &amp; Management</span>
         <ul>
-          <li>Team Assembly & Communication Flow</li>
+          <li>Team Assembly &amp; Communication Flow</li>
           <li>Tool/Stack Recommendations</li>
-          <li>Identifying Roadblocks & Solutions</li>
-      <li>Individual & Team Mentorship</li><br>
+          <li>Identifying Roadblocks &amp; Solutions</li>
+          <li>Individual &amp; Team Mentorship</li>
         </ul>
       </li>
     </ul>
     <br>
   I'm not the right person for -
-    <ul>
-      <li>Social Media Channel, Calendar Management</li><br>
-      <li>Content Creation</li><br>
-      <li>Web Design</li><br>
-      <li>Artist Management</li><br>
+    <ul class="not-right-list">
+      <li>Social Media Channel, Calendar Management</li>
+      <li>Content Creation</li>
+      <li>Web Design</li>
+      <li>Artist Management</li>
       <li>A&amp;R</li>
     </ul>
   </div>
 
   <div id="about" class="section">
     <p>I've lead the digital line through the streaming music boom, social media's rise and the explosion of available data, building efficient, effective teams and consistently driving results and growth across the board.</p>
-    <p>I have a fiercely independent mindset, which continues to form the core of my approach to work and people. Through this, I’ve earned a strong reputation as a deeply knowledgeable, personable, clear and direct digital thought leader and strategist over the last two decades, quoted in the New Statesman, Mixmag, MusicAlly, MusicTech and more on music industry matters.</p>
+    <p>I have a fiercely independent mindset, which continues to form the core of my approach to work and people. Through this, I've earned a strong reputation as a deeply knowledgeable, personable, clear and direct digital thought leader and strategist over the last two decades, quoted in the New Statesman, Mixmag, MusicAlly, MusicTech and more on music industry matters.</p>
     <p>I prefer to avoid jumping on flavour-of-the-month trends, preferring to take a considered, artist-first, results driven approach to release marketing, focussing on ownership of data, audience building and more.</p>
-    <p>I’m dry, sarcastic, self deprecating and a joy to work with. If you need a hand with anything I can do, are looking to hire someone on a contract/freelance basis, or are just looking to chat about the latest changes in the music industry, let's talk!</p>
+    <p>I'm dry, sarcastic, self deprecating and a joy to work with. If you need a hand with anything I can do, are looking to hire someone on a contract/freelance basis, or are just looking to chat about the latest changes in the music industry, let's talk!</p>
   <br>
 <p>You can also find me on</p>
 
@@ -297,11 +318,11 @@ a.email-link:hover {
   </div>
 
   <div id="testimonials" class="section">
-    <p><em>I cannot recommend Tom more highly. He’s a brilliant digital exec, fantastic human and has been an invaluable resource to Merlin and me for years.</em><br>
-    <p>— Jim Mahoney, SVP Member & Partner Success, Merlin</p><br>
+    <p><em>I cannot recommend Tom more highly. He's a brilliant digital exec, fantastic human and has been an invaluable resource to Merlin and me for years.</em><br>
+    <p>— Jim Mahoney, SVP Member &amp; Partner Success, Merlin</p><br>
 
     <p><em>(Tom was) an early visionary and understood the power YouTube can bring to artist development before most of the industry did.</em><br>
-    <p>— Eduard Castelló, Director of Independent Music Business Development & Partnerships, YouTube</p>
+    <p>— Eduard Castelló, Director of Independent Music Business Development &amp; Partnerships, YouTube</p>
   </div>
 
   <div id="connect" class="section" style="display: none;">
@@ -325,30 +346,10 @@ a.email-link:hover {
 
   <footer id="footer">
     <hr class="footer-line" />
-    <p>&copy; 2025 TMDigital. All rights reserved.</p>
+    <p>&copy; 2026 TMDigital. All rights reserved.</p>
   </footer>
 
   <script>
-    function typeText(elementId, text, speed, callback) {
-      let i = 0;
-      const el = document.getElementById(elementId);
-      function type() {
-        if (i <= text.length) {
-          el.textContent = text.substring(0, i);
-          if (el.textContent.length > 0) {
-            el.classList.add('has-text');
-          } else {
-            el.classList.remove('has-text');
-          }
-          i++;
-          setTimeout(type, speed);
-        } else if (callback) {
-          callback();
-        }
-      }
-      type();
-    }
-
     function toggleSection(id) {
       const sections = document.querySelectorAll('.section');
       sections.forEach(section => {
@@ -357,35 +358,15 @@ a.email-link:hover {
     }
 
     window.onload = () => {
-      const headerText = 'TMDigital';
-      const subheaderText = 'Bespoke Consulting for the Music Industry';
-      const headerEl = document.getElementById('headerText');
-      const subheaderEl = document.getElementById('subheaderText');
       const contentEl = document.getElementById('content');
       const menuEl = document.getElementById('menu');
 
-      let subIndex = 0;
-
-      function typeSubheader() {
-        if (subIndex < subheaderText.length) {
-          subheaderEl.textContent += subheaderText.charAt(subIndex);
-          subIndex++;
-          setTimeout(typeSubheader, 40);
-        } else {
-          contentEl.style.opacity = 1;
-          menuEl.style.display = 'flex';
-          document.getElementById('footer').style.opacity = 1;
-          setTimeout(() => {
-            menuEl.style.opacity = 1;
-          }, 50);
-        }
-      }
-
+      contentEl.style.opacity = 1;
+      menuEl.style.display = 'flex';
+      document.getElementById('footer').style.opacity = 1;
       setTimeout(() => {
-        typeText('headerText', headerText, 120, () => {
-          typeSubheader();
-        });
-      }, 1000);
+        menuEl.style.opacity = 1;
+      }, 50);
     };
   </script>
 </body>
