@@ -1,373 +1,465 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-YN4KS58X46"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-YN4KS58X46');
-</script>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>TMDigital</title>
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      background-color: #f8f7f1;
-      font-family: 'Courier New', Courier, monospace;
-      font-weight: 300;
-      color: #333;
-      scroll-behavior: smooth;
-    }
-
-    body {
-      box-sizing: border-box;
-    }
-
-    .hero {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: flex-start;
-      padding: 12vh 3em 0 3em;
-      box-sizing: border-box;
-    }
-
-    h1, h2 {
-      margin: 0;
-      overflow-wrap: break-word;
-      word-wrap: break-word;
-      word-break: break-word;
-    }
-
-    h1 {
-      font-size: 3em;
-      font-weight: normal;
-      margin-bottom: 0.2em;
-      display: inline;
-      line-height: 1;
-      background-color: #edcccc;
-      padding: 0 0.1em;
-    }
-
-    h2 {
-      font-size: 1.5em;
-      font-weight: normal;
-      margin-top: 0.2em;
-      white-space: normal;
-      word-break: break-word;
-    }
-
-    h4 {
-      margin: 0.5em 0;
-      display: inline;
-      line-height: 1;
-    }
-
-    #content {
-      margin: 5vh 3em 5vh 3em;
-      max-width: 700px;
-      white-space: normal;
-      opacity: 0;
-      transition: opacity 1.2s ease-in-out;
-    }
-
-    .menu {
-      margin: 2em 3em;
-      display: none;
-      gap: 2em;
-      font-size: 1em;
-      cursor: pointer;
-      opacity: 0;
-      transition: opacity 1.2s ease-in-out;
-    }
-
-    .menu span {
-      text-decoration: underline;
-    }
-
-    .section {
-      margin: 2em 3em 6em 3em;
-      display: none;
-      max-width: 700px;
-    }
-
-    #services ul {
-      list-style: none;
-      padding-left: 0;
-    }
-
-    #services > ul > li {
-      margin-bottom: 1.2em;
-    }
-
-    #services > ul > li > span {
-      background-color: #edcccc;
-      padding: 0 0.1em;
-      display: inline;
-    }
-
-    #services > ul > li > ul {
-      list-style: none;
-      padding-left: 1.5em;
-      margin-top: 0.3em;
-    }
-
-    #services > ul > li > ul > li {
-      position: relative;
-      padding-left: 1em;
-      margin-bottom: 0.1em;
-    }
-
-    #services > ul > li > ul > li::before {
-      content: '–';
-      position: absolute;
-      left: 0;
-      color: #888;
-    }
-
-    #services .not-right-list {
-      list-style: none;
-      padding-left: 1.5em;
-      margin-top: 0.3em;
-    }
-
-    #services .not-right-list > li {
-      position: relative;
-      padding-left: 1em;
-      margin-bottom: 0.5em;
-    }
-
-    #services .not-right-list > li::before {
-      content: '–';
-      position: absolute;
-      left: 0;
-      color: #888;
-    }
-
-    #connect a,
-    #kindred a,
-    #about a,
-    #content a {
-      color: #000;
-      text-decoration: none;
-    }
-
-    a.email-link {
-      color: #000;
-      font-weight: bold;
-      text-decoration: none;
-    }
-
-    a.email-link:hover {
-      text-decoration: underline;
-    }
-
-    #connect a:hover,
-    #kindred a:hover,
-    #about a:hover,
-    #content a:hover {
-      text-decoration: underline;
-    }
-
-    footer {
-      opacity: 0;
-      transition: opacity 1.2s ease-in-out;
-      margin-top: 6vh;
-      padding: 2em 3em;
-      font-size: 0.8em;
-      color: #666;
-      max-width: 700px;
-    }
-
-    .footer-line {
-      width: fit-content;
-      border: none;
-      border-top: 1px solid #ccc;
-      margin: 0 auto 1em auto;
-    }
-
-   @media (max-width: 768px) {
-  h1 {
-    font-size: 2.5em;
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>TMDigital</title>
+<style>
+  :root {
+    --paper: #f4f2ec;
+    --ink: #1c1b18;
+    --ink-muted: #6b675d;
+    --rule: #cfcabb;
+    --rule-strong: #1c1b18;
+    --highlight: #edcccc;
+    --accent: #a84f63;
   }
-
-  h2 {
+ 
+  * { box-sizing: border-box; }
+ 
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Courier New', Courier, monospace;
+  }
+ 
+  .wrap { max-width: 760px; margin: 0 auto; padding: 0 1.8em 5vh 1.8em; }
+ 
+  .kicker {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.7em;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 500;
+  }
+ 
+  /* masthead */
+  .masthead { padding-top: 3em; }
+  .nameplate {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 400;
+    font-size: 4.4em;
+    letter-spacing: -0.01em;
+    line-height: 0.95;
+    margin: 0.22em 0 0.1em 0;
+    background: var(--highlight);
+    display: inline-block;
+    padding: 0 0.08em;
+  }
+  .strapline {
+    font-family: 'Courier New', Courier, monospace;
+    font-style: italic;
+    font-size: 1.15em;
+    color: var(--ink);
+    margin: 0.3em 0 0 0;
+    max-width: 30em;
+  }
+  .masthead-rule {
+    border: none;
+    border-top: 3px solid var(--rule-strong);
+    border-bottom: 1px solid var(--rule-strong);
+    height: 3px;
+    margin: 1.1em 0 0 0;
+  }
+ 
+  /* lede */
+  .lede { padding: 2.2em 0 0 0; max-width: 44em; }
+  .lede p {
+    font-size: 1.12em;
+    line-height: 1.7;
+    margin: 0 0 1.1em 0;
+  }
+  a.email-link {
+    color: var(--ink);
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1px solid var(--accent);
+  }
+  a.email-link:hover { background: var(--highlight); }
+ 
+  /* nav / sections tabs */
+  nav {
+    display: flex;
+    gap: 1.6em;
+    flex-wrap: wrap;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.1em;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin-top: 2.2em;
+    padding: 0.9em 0;
+    border-top: 1px solid var(--rule-strong);
+  }
+  nav span {
+    cursor: pointer;
+    color: var(--ink-muted);
+    padding: 0.1em 0.35em;
+    border-bottom: 1px solid transparent;
+  }
+  nav span:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+  }
+  nav span:hover, nav span.active {
+    color: var(--ink);
+    background: var(--highlight);
+    border-bottom-color: var(--accent);
+  }
+ 
+  .section { display: none; padding-top: 2.6em; }
+  .section.open { display: block; }
+ 
+  .section-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--rule-strong);
+    padding-bottom: 0.5em;
+    margin-bottom: 0;
+  }
+  .section-head h2 {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 400;
+    font-size: 1.3em;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin: 0;
+  }
+  .section-head h2.highlighted {
+    background: var(--highlight);
+    padding: 0.02em 0.15em;
+    display: inline-block;
+  }
+ 
+  /* chart listing for services */
+  .chart-row {
+    padding: 1.3em 0;
+  }
+  .chart-row + .chart-row { border-top: 1px solid var(--rule); }
+  .chart-row:last-of-type { border-bottom: 1px solid var(--rule); }
+  .chart-row h3 {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 500;
+    font-size: 1.1em;
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+    margin: 0 0 0.5em 0;
+  }
+  .chart-row ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.9em;
+    color: var(--ink-muted);
+    line-height: 1.85;
+    columns: 2;
+  }
+  .chart-row ul li::before { content: '– '; color: var(--rule); }
+ 
+  .small-print {
+    margin-top: 1.8em;
+    padding-top: 1.2em;
+    border-top: 1px dashed var(--rule);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.82em;
+    color: var(--ink-muted);
+    letter-spacing: 0.02em;
+  }
+  .small-print b {
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--ink);
+  }
+ 
+  /* about / profile */
+  .byline {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.82em;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin-bottom: 1.4em;
+  }
+  .prose p {
+    font-size: 1.1em;
+    line-height: 1.75;
+    max-width: 42em;
+    margin: 0 0 1.2em 0;
+  }
+ 
+  .linklist { list-style: none; padding: 0; margin: 1.6em 0 0 0; max-width: 30em; }
+  .linklist li {
+    border-top: 1px solid var(--rule);
+    padding: 0.7em 0;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.92em;
+  }
+  .linklist a { color: var(--ink); text-decoration: none; }
+  .linklist a:hover { color: var(--accent); }
+  .linklist a::after { content: ' →'; color: var(--ink-muted); }
+ 
+  .artist-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    columns: 3;
+    column-gap: 1.5em;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.9em;
+    color: var(--ink);
+    line-height: 2;
+  }
+  .artist-list li { break-inside: avoid; }
+  .artist-list li::before { content: '– '; color: var(--rule); }
+ 
+  /* quotes */
+  .quote-box {
+    border-left: 3px solid var(--highlight);
+    padding: 0.2em 0 0.2em 1.4em;
+    margin-bottom: 1.8em;
+  }
+  .quote-box p {
+    font-style: italic;
     font-size: 1.2em;
+    line-height: 1.6;
+    margin: 0.2em 0 0.8em 0;
   }
-
-  .hero,
-  #content,
-  .menu,
-  .section,
+  .quote-box .attrib {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.82em;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+  }
+ 
   footer {
-    padding-left: 0;
-    padding-right: 0;
+    margin-top: 5vh;
+    padding-top: 1em;
+    border-top: 3px solid var(--rule-strong);
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.8em;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
   }
-
-  .hero,
-  #content,
-  .menu,
-  .section,
-  footer {
-    margin-left: 1.5em;
-    margin-right: 1.5em;
+ 
+  @media (max-width: 640px) {
+    .nameplate { font-size: 2.8em; }
+    .chart-row { grid-template-columns: 1fr; }
+    .chart-row ul { columns: 1; }
+    footer { flex-direction: column; gap: 0.4em; }
   }
-}
-  </style>
+</style>
 </head>
 <body>
-  <div class="hero">
-    <h1>TMDigital</h1>
-    <h2>Bespoke Consulting for the Music Industry</h2>
-  </div>
-
-  <div id="content">
-   <p>Hello, I'm Tom - a London born, Yorkshire raised, Los Angeles based music and marketing executive. I've been working in the music industry for 20 years, at record labels, DSPs and brick-and-mortar stores, developing a breadth of expertise across the digital music and modern marketing landscapes. I've worked with chart-bothering, record-breaking artists and campaigns in the US, UK and Europe, GRAMMY winners, and some of the most critically acclaimed, boundary-pushing independent artists and labels of our generation.</p>
-<p>If you need a plug and play solution for any of the services I can offer below, or are just looking to chat about the latest changes in the music industry, let's talk!</p>
-    <p><a href="mailto:hello@tmdigital.music" class="email-link">hello@tmdigital.music</a></p>
-  </div>
-
-  <div class="menu" id="menu">
-    <span onclick="toggleSection('services')">Services</span>
-    <span onclick="toggleSection('about')">About</span>
-    <span onclick="toggleSection('testimonials')">Testimonials</span>
-    <span onclick="toggleSection('kindred')">Kindred Spirits</span>
-  </div>
-
-  <div id="services" class="section">
-    <ul>
-      <li>
-        <span>Artist &amp; Campaign Strategy</span>
+ 
+  <div class="wrap">
+ 
+    <div class="masthead">
+      <div class="kicker">Music &amp; marketing executive</div>
+      <h1 class="nameplate">TMDigital</h1>
+      <p class="strapline">Bespoke consulting for the music industry.</p>
+      <hr class="masthead-rule" />
+    </div>
+ 
+    <div class="lede prose">
+      <p>Hello, I'm Tom — a London born, Yorkshire raised, Los Angeles based music and marketing executive, with 16+ years building and leading digital strategy for independent music across campaigns, platforms, data and teams on both sides of the Atlantic — through the streaming boom, social media's rise and the explosion of available data.</p>
+      <p>I'm most interested in the nexus of online marketing, owned audience growth and eCommerce — real results over optics, and turning the what, where, why and how into language that actually helps artists, managers and executives make decisions.</p>
+      <p>That work has helped drive a Billboard Top 3 album, GRAMMY wins and multiple nominations, a Mercury Prize win, and a run of UK Top 5 chart placements — as well as building smart, efficient and capable teams across multiple disciplines.</p>
+      <p>I have a fiercely independent mindset, which continues to form the core of my approach to work and people.</p>
+      <p>If you need a hand with anything I can do, are looking to hire someone on a contract/freelance basis, or are just looking to chat about the latest changes in the music industry, let's talk.</p>
+      <p><a href="mailto:hello@tmdigital.music" class="email-link">hello@tmdigital.music</a></p>
+    </div>
+ 
+    <div class="section-head" style="margin-top: 2.6em;">
+      <h2 class="highlighted">Services</h2>
+    </div>
+ 
+    <div class="chart-row">
+      <div>
+        <h3>Artist &amp; campaign strategy</h3>
         <ul>
-          <li>Digital Channel Health Checks</li>
-          <li>eCommerce &amp; D2C Store Setup &amp; Strategy</li>
-          <li>Email &amp; CRM Planning &amp; Execution</li>
-          <li>Digital Advertising Planning &amp; Execution</li>
-          <li>Marketing Strategy</li>
-          <li>DSP &amp; Social Channel Exploitation</li>
-          <li>Rollout Planning</li>
-          <li>Release Teasing</li>
-          <li>Release Day Checklists</li>
-          <li>Audience Capture Planning</li>
-          <li>Performance Analysis</li>
-          <li>Campaign Recaps</li>
+          <li>Digital channel health checks</li>
+          <li>Ecommerce &amp; D2C setup &amp; strategy</li>
+          <li>Email &amp; CRM planning &amp; execution</li>
+          <li>Digital advertising planning &amp; execution</li>
+          <li>Marketing strategy</li>
+          <li>DSP &amp; social channel exploitation</li>
+          <li>Rollout planning</li>
+          <li>Release teasing</li>
+          <li>Release day checklists</li>
+          <li>Audience capture planning</li>
+          <li>Performance analysis</li>
+          <li>Campaign recaps</li>
         </ul>
-      </li>
-      <li>
-        <span>Data Analysis</span>
+      </div>
+    </div>
+ 
+    <div class="chart-row">
+      <div>
+        <h3>Data analysis</h3>
         <ul>
-          <li>eCommerce / D2C Sales Data</li>
-          <li>DSP Performance - Release &amp; Catalogue</li>
-          <li>Social Channel &amp; Content Engagement</li>
-          <li>Audience &amp; Segmentation</li>
-          <li>Revenue Analysis</li>
+          <li>Ecommerce / D2C sales data</li>
+          <li>DSP performance — release &amp; catalogue</li>
+          <li>Social channel &amp; content engagement</li>
+          <li>Audience &amp; segmentation</li>
+          <li>Revenue analysis</li>
         </ul>
-      </li>
-      <li>
-        <span>Catalogue Distribution &amp; Exploitation</span>
+      </div>
+    </div>
+ 
+    <div class="chart-row">
+      <div>
+        <h3>Catalogue distribution &amp; exploitation</h3>
         <ul>
-          <li>Platform Distribution</li>
-          <li>Rights Management</li>
-          <li>Conflict Negotiation</li>
-          <li>Deal Analysis &amp; Breakdowns</li>
+          <li>Platform distribution</li>
+          <li>Rights management</li>
+          <li>Conflict negotiation</li>
+          <li>Deal analysis &amp; breakdowns</li>
         </ul>
-      </li>
-      <li>
-        <span>Team Setup &amp; Management</span>
+      </div>
+    </div>
+ 
+    <div class="chart-row">
+      <div>
+        <h3>Team setup &amp; management</h3>
         <ul>
-          <li>Team Assembly &amp; Communication Flow</li>
-          <li>Tool/Stack Recommendations</li>
-          <li>Identifying Roadblocks &amp; Solutions</li>
-          <li>Individual &amp; Team Mentorship</li>
+          <li>Team assembly &amp; communication flow</li>
+          <li>Tool / stack recommendations</li>
+          <li>Identifying roadblocks &amp; solutions</li>
+          <li>Individual &amp; team mentorship</li>
         </ul>
-      </li>
-    </ul>
-    <br>
-  I'm not the right person for -
-    <ul class="not-right-list">
-      <li>Social Media Channel, Calendar Management</li>
-      <li>Content Creation</li>
-      <li>Web Design</li>
-      <li>Artist Management</li>
-      <li>A&amp;R</li>
-    </ul>
+      </div>
+    </div>
+ 
+    <div class="small-print">
+      <b>Not the right fit —</b> social media channel &amp; calendar management, content creation, web design, artist management, A&amp;R.
+    </div>
+ 
+    <nav id="menu">
+      <span data-target="testimonials" tabindex="0" role="button">Testimonials</span>
+      <span data-target="previous" tabindex="0" role="button">Previous work</span>
+      <span data-target="kindred" tabindex="0" role="button">Kindred spirits</span>
+      <span data-target="links" tabindex="0" role="button">Links</span>
+    </nav>
+ 
+    <div id="previous" class="section">
+      <div class="byline">Via Ninja Tune</div>
+      <ul class="artist-list">
+        <li>Actress</li>
+        <li>Amon Tobin</li>
+        <li>Bicep</li>
+        <li>Black Country, New Road</li>
+        <li>Bonobo</li>
+        <li>The Bug</li>
+        <li>The Cinematic Orchestra</li>
+        <li>Coldcut</li>
+        <li>Daedelus</li>
+        <li>DJ Food</li>
+        <li>Fink</li>
+        <li>Floating Points</li>
+        <li>Forest Swords</li>
+        <li>Genevieve Artadi</li>
+        <li>The Heavy</li>
+        <li>Helena Hauff</li>
+        <li>Hiatus Kaiyote</li>
+        <li>Julianna Barwick</li>
+        <li>Kae Tempest</li>
+        <li>Kamasi Washington</li>
+        <li>Kelis</li>
+        <li>Kid Koala</li>
+        <li>Leon Vynehall</li>
+        <li>Little Dragon</li>
+        <li>Louis Cole</li>
+        <li>Machinedrum</li>
+        <li>Maribou State</li>
+        <li>Marie Davidson</li>
+        <li>Martyn</li>
+        <li>Metronomy</li>
+        <li>Nilüfer Yanya</li>
+        <li>ODESZA</li>
+        <li>Portico Quartet</li>
+        <li>Roots Manuva</li>
+        <li>Run The Jewels</li>
+        <li>Teebs</li>
+        <li>Thundercat</li>
+        <li>Tycho</li>
+        <li>A Winged Victory For The Sullen</li>
+        <li>Yaya Bey</li>
+        <li>Young Fathers</li>
+      </ul>
+    </div>
+ 
+    <div id="links" class="section">
+      <ul class="linklist">
+        <li><a href="https://www.linkedin.com/in/tom-macdonald-b656b111/" target="_blank">LinkedIn</a></li>
+        <li><a href="https://substack.com/@tommmacdonald/posts" target="_blank">Substack</a></li>
+        <li><a href="https://bandcamp.com/tommmacdonald/playlist/for-2025" target="_blank">Bandcamp</a></li>
+        <li><a href="https://www.last.fm/user/tommmacdonald/library/artists" target="_blank">Last.fm</a></li>
+      </ul>
+    </div>
+ 
+    <div id="testimonials" class="section">
+      <div class="quote-box">
+        <p>I cannot recommend Tom more highly. He's a brilliant digital exec, fantastic human and has been an invaluable resource to Merlin and me for years.</p>
+        <div class="attrib">Jim Mahoney — SVP Member &amp; Partner Success, Merlin</div>
+      </div>
+ 
+      <div class="quote-box">
+        <p>Tom was an early visionary and understood the power YouTube can bring to artist development before most of the industry did.</p>
+        <div class="attrib">Eduard Castelló — Director of Independent Music Business Development &amp; Partnerships, YouTube</div>
+      </div>
+    </div>
+ 
+    <div id="kindred" class="section">
+      <ul class="linklist">
+        <li><a href="https://www.rarelyunable.com/" target="_blank">Rarely Unable</a></li>
+        <li><a href="https://www.instagram.com/danwongphoto/" target="_blank">Dan Wong Photography</a></li>
+        <li><a href="https://chaostheorymusic.co.uk/" target="_blank">Chaos Theory Music</a></li>
+        <li><a href="https://www.firstterracerecords.com/" target="_blank">First Terrace Records</a></li>
+      </ul>
+    </div>
+ 
+    <footer>
+      <span>© 2026 TMDigital</span>
+      <span>All rights reserved</span>
+    </footer>
+ 
   </div>
-
-  <div id="about" class="section">
-    <p>I've lead the digital line through the streaming music boom, social media's rise and the explosion of available data, building efficient, effective teams and consistently driving results and growth across the board.</p>
-    <p>I have a fiercely independent mindset, which continues to form the core of my approach to work and people. Through this, I've earned a strong reputation as a deeply knowledgeable, personable, clear and direct digital thought leader and strategist over the last two decades, quoted in the New Statesman, Mixmag, MusicAlly, MusicTech and more on music industry matters.</p>
-    <p>I prefer to avoid jumping on flavour-of-the-month trends, preferring to take a considered, artist-first, results driven approach to release marketing, focussing on ownership of data, audience building and more.</p>
-    <p>I'm dry, sarcastic, self deprecating and a joy to work with. If you need a hand with anything I can do, are looking to hire someone on a contract/freelance basis, or are just looking to chat about the latest changes in the music industry, let's talk!</p>
-  <br>
-<p>You can also find me on</p>
-
-<ul>
-      <li><a href="https://www.linkedin.com/in/tom-macdonald-b656b111/" target="_blank">LinkedIn</a></li><br>
-      <li><a href="https://substack.com/@tommmacdonald/posts" target="_blank">Substack</a></li><br>
-      <li><a href="https://bsky.app/profile/tmdigital.music" target="_blank">BlueSky</a></li><br>
-      <li><a href="https://bandcamp.com/tommmacdonald/playlist/for-2025" target="_blank">Bandcamp</a></li><br>
-      <li><a href="https://www.last.fm/user/tommmacdonald/library/artists" target="_blank">Last.fm</a></li><br>
-    </ul>
-  
-  </div>
-
-  <div id="testimonials" class="section">
-    <p><em>I cannot recommend Tom more highly. He's a brilliant digital exec, fantastic human and has been an invaluable resource to Merlin and me for years.</em><br>
-    <p>— Jim Mahoney, SVP Member &amp; Partner Success, Merlin</p><br>
-
-    <p><em>(Tom was) an early visionary and understood the power YouTube can bring to artist development before most of the industry did.</em><br>
-    <p>— Eduard Castelló, Director of Independent Music Business Development &amp; Partnerships, YouTube</p>
-  </div>
-
-  <div id="connect" class="section" style="display: none;">
-    <ul>
-      <li><a href="https://www.linkedin.com/in/tom-macdonald-b656b111/" target="_blank">LinkedIn</a></li><br>
-      <li><a href="https://substack.com/@tommmacdonald/posts" target="_blank">Substack</a></li><br>
-      <li><a href="https://bsky.app/profile/tmdigital.music" target="_blank">BlueSky</a></li><br>
-      <li><a href="https://bandcamp.com/tommmacdonald/playlist/for-2025" target="_blank">Bandcamp</a></li><br>
-      <li><a href="https://www.last.fm/user/tommmacdonald/library/albums?date_preset=LAST_365_DAYS" target="_blank">Last.fm</a></li><br>
-    </ul>
-  </div>
-
-  <div id="kindred" class="section">
-    <ul>
-      <li><a href="https://www.rarelyunable.com/" target="_blank">Rarely Unable</a></li><br>
-      <li><a href="https://www.instagram.com/danwongphoto/" target="_blank">Dan Wong Photography</a></li><br>
-      <li><a href="https://chaostheorymusic.co.uk/" target="_blank">Chaos Theory Music</a></li><br>
-      <li><a href="https://www.firstterracerecords.com/" target="_blank">First Terrace Records</a></li><br>
-    </ul>
-  </div>
-
-  <footer id="footer">
-    <hr class="footer-line" />
-    <p>&copy; 2026 TMDigital. All rights reserved.</p>
-  </footer>
-
+ 
   <script>
-    function toggleSection(id) {
-      const sections = document.querySelectorAll('.section');
-      sections.forEach(section => {
-        section.style.display = (section.id === id && section.style.display !== 'block') ? 'block' : 'none';
+    const spans = document.querySelectorAll('nav span');
+    const sections = document.querySelectorAll('.section');
+ 
+    spans.forEach(span => {
+      const activate = () => {
+        const target = span.dataset.target;
+        const isOpen = document.getElementById(target).classList.contains('open');
+ 
+        sections.forEach(s => s.classList.remove('open'));
+        spans.forEach(s => s.classList.remove('active'));
+ 
+        if (!isOpen) {
+          document.getElementById(target).classList.add('open');
+          span.classList.add('active');
+        }
+      };
+ 
+      span.addEventListener('click', activate);
+      span.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          activate();
+        }
       });
-    }
-
-    window.onload = () => {
-      const contentEl = document.getElementById('content');
-      const menuEl = document.getElementById('menu');
-
-      contentEl.style.opacity = 1;
-      menuEl.style.display = 'flex';
-      document.getElementById('footer').style.opacity = 1;
-      setTimeout(() => {
-        menuEl.style.opacity = 1;
-      }, 50);
-    };
+    });
   </script>
+ 
 </body>
 </html>
